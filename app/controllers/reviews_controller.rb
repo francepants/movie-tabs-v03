@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
     before_action :current_user, only: [:edit, :update, :destroy]
+    before_action :set_review, except: [:index, :new, :create]
 
     def index
         # if its nested AND if we can find that post 
@@ -26,6 +27,23 @@ class ReviewsController < ApplicationController
         else
             render :new
         end
+    end
+
+    def edit
+
+    end
+
+    def update
+        if @review.update(review_params)
+            redirect_to review_path(@review)
+        else
+            render :edit
+        end
+    end
+
+    def destroy
+        @review.delete
+        redirect_to reviews_path
     end
 
     private
