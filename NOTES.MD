@@ -61,10 +61,15 @@
 
 - User
     - can sign up - DONE
-    - can log in 
-    - can log out 
+    - can log in - DONE
+    - can log out - DONE
+    
     - log in through google 
 
-
+## Other
 - Genres
     Action, Horror, Comedy, Sci-Fi, Romance, Western, Crime, Rom-Com, Thriller, Adventure, Musical, Drama, Documentary, Mystery, Noir, Martial Arts, Slasher, Fantasy, Dark Comedy, Children's, Biographical, Fiction, Parody, Indie, Superhero, Gangster, Chick Flick, Teen
+
+
+<%= link_to "Sign Up", signup_path, method: :get%> |
+<%= link_to "Log In", login_path, method: :get%>
