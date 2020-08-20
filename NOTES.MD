@@ -46,10 +46,10 @@
     - can add / create a movie - DONE
     - can see a list of all movies added - DONE
     - show individual movie info - DONE
-    - search through movie titles 
+    - edit / update movie - DONE
 
-    - edit / update movie 
-    - delete current_users movie 
+    - search through movie titles 
+    - delete movie 
     
 
 - Review
