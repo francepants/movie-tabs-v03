@@ -11,7 +11,7 @@
 
   <body>
 
-    <div>
+    <nav>
       <% if logged_in? %>
         <%= link_to "My Profile", user_path(current_user) %> |
         <%= link_to "All Movies", movies_path %> |
@@ -25,7 +25,7 @@
         <%= link_to "Log In", login_path %> | 
         <%= link_to "Log In with Google", '/auth/google_oauth2' %>
       <% end %>
-    </div>
+    </nav>
 
     <div>
       <% if flash[:message] %>

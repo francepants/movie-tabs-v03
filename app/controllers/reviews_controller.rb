@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+    before_action :redirect_if_not_logged_in
     before_action :current_user, only: [:edit, :update, :destroy]
     before_action :set_review, except: [:index, :new, :create]
 
@@ -26,6 +27,12 @@ class ReviewsController < ApplicationController
             redirect_to reviews_path
         else
             render :new
+        end
+    end
+
+    def show
+        if @review.blank?
+            redirect_to reviews_path
         end
     end
 
