@@ -47,10 +47,9 @@
     - can see a list of all movies added - DONE
     - show individual movie info - DONE
     - edit / update movie - DONE
+    - delete movie - DONE
+    - search through movie titles - DONE
 
-    - search through movie titles 
-    - delete movie 
-    
 
 - Review
     - can add / create reviews 

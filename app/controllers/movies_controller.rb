@@ -8,6 +8,12 @@ class MoviesController < ApplicationController
         else
             @movies = Movie.all
         end
+        
+        if params[:term]
+            @movies = Movie.search(params[:term])
+        else
+            @movies = Movie.all.sorted_movies
+        end
     end
 
     def new
