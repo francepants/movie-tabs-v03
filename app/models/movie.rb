@@ -1,5 +1,7 @@
 class Movie < ApplicationRecord
     has_many :reviews
+    # dependent: :destroy
+
     has_many :users, through: :reviews
 
     validates :title, presence: true, uniqueness: true
@@ -8,7 +10,7 @@ class Movie < ApplicationRecord
     validates :rating, presence: true
     validates :release_year, presence: true
 
-    scope :sorted_movies, -> {order(:title)}
+    scope :sorted_movies, -> {order("lower(title) ASC")}
     scope :search, -> (term) {self.sorted_movies.where("title LIKE ?", "%#{term}%")}
 
 end

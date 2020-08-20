@@ -1,18 +1,19 @@
 class MoviesController < ApplicationController
     before_action :redirect_if_not_logged_in
+    before_action :current_user, only: [:edit, :update, :destroy]
     before_action :set_movie, except: [:index, :new, :create]
 
     def index
         if params[:user_id] && @user = User.find_by_id(params[:user_id])
             @movies = @user.movies
         else
-            @movies = Movie.all
+            @movies = Movie.all.sorted_movies
         end
         
         if params[:term]
             @movies = Movie.search(params[:term])
         else
-            @movies = Movie.all.sorted_movies
+            @movies = Movie.sorted_movies
         end
     end
 
@@ -52,7 +53,7 @@ class MoviesController < ApplicationController
     end
 
     def movie_params
-        params.require(:movie).permit(:title, :length, :genre, :rating, :release_year, :search)
+        params.require(:movie).permit(:title, :length, :genre, :rating, :release_year, :search, params[:id])
     end
     
 end

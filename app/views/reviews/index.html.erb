@@ -6,9 +6,10 @@
 
 <% @reviews.each do |rev| %>
     <ul>
-      <li>Review on <strong><%= link_to rev.movie.title, movie_path(rev.movie_id) %></strong>: 
+      <li><strong>Review on <%= link_to rev.movie.title, movie_path(rev.movie_id) %></strong>: 
       <ul> 
-        <li><%= rev.comment %> - <%= rev.user.username %></li> </li>
+        <li>Review title: <%= rev.title %></li>
+        <li><%= rev.comment %> - <em><%= rev.user.username %></em></li> </li>
       </ul>
       <ul> 
         <% if current_user?(rev.user) %>

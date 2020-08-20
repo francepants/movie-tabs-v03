@@ -22,5 +22,9 @@ Rails.application.routes.draw do
 
   get '/auth/:google_oath2/callback' => 'sessions#omniauth'
 
+
+  #redirects if no route exists
+  get '*path' => redirect('/')
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
