@@ -13,9 +13,12 @@
 
     <div>
       <% if logged_in? %>
-        <%= link_to "Log Out", logout_path, method: "delete" %> |
+        <%= link_to "My Profile", user_path(current_user) %> |
         <%= link_to "All Movies", movies_path %> |
         <%= link_to "Add Movie", new_movie_path %> |
+        <%= link_to "All Reviews", reviews_path %> |
+        <%= link_to "Add Review", new_review_path %> |
+        <%= link_to "Log Out", logout_path, method: "delete" %> 
       <% else %>
         <%= link_to "Home", root_path %> |
         <%= link_to "Sign Up", signup_path %> |

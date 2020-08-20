@@ -1,0 +1,48 @@
+<% if @review.movie %>
+    <h1>Review for <%= @review.movie.title %></h1>
+<% else %>
+    <h1>New Review!</h1>
+<% end %>
+
+<!---add error to partial--->
+
+<% if @review.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+ 
+    <ul>
+    <% @review.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<!---form partial--->
+
+<%= form_for([@review.movie, @review]) do |f| %>
+    <%= f.label :movie, "Select the movie you wish to review:" %>
+    <br>
+    <%= f.collection_select :movie_id, Movie.order('title ASC').all, :id, :title, :include_blank => "Movie" %>
+    <br>
+    <br>
+
+    <%= f.label :title, "Review Title:" %>
+    <br>
+    <%= f.text_field :title %>
+    <br>
+    <br>
+
+    <%= f.label :comment %>
+    <br>
+    <%= f.text_area :comment, :cols => 30, :rows => 10 %>
+    <br>
+    <br>
+
+    <%= f.label :recommend %>
+    <%= f.select :recommend, options_for_select(["Yes", "No"]) %>
+    <br>
+    <br>
+
+    <%= f.submit %>
+<% end %>

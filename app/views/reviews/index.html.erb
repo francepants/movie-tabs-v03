@@ -1,0 +1,10 @@
+<h1>All Reviews</h1>
+
+<% @reviews.each do |rev| %>
+    <ul>
+      <li>Review on <strong><%= link_to rev.movie.title, movie_path(rev.movie_id) %></strong>: 
+      <ul> 
+        <li><%= rev.comment %> - <%= rev.user.username %></li> </li>
+      </ul>
+    </ul>
+<% end %>

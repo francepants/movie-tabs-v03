@@ -50,10 +50,9 @@
     - delete movie - DONE
     - search through movie titles - DONE
 
-
 - Review
-    - can add / create reviews 
-    - can see a list of movie reviews 
+    - can add / create reviews - DONE
+    - can see a list of movie reviews - DONE
     - can see a list of selected movies reviews
     - edit/update only current_users reviews
     - can delete current_users reviews
