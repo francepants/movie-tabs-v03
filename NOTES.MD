@@ -62,10 +62,13 @@
     - can sign up - DONE
     - can log in - DONE
     - can log out - DONE
+    - log in through google - DONE
 
-    - log in through google 
 
-- Add validations
+- Add validations - DONE
+
+- Partials
+
 
 ## Other
 - Genres
