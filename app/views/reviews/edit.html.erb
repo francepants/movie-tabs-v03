@@ -1,8 +1,4 @@
 <h1>Edit Movie Review</h1>
 
-<% if @review.movie %>
-    <h1>Review for <%= @review.movie.title %></h1>
-<% end %>
-
 <!---form partial--->
 <%= render partial: 'form', locals: {review: @review} %>

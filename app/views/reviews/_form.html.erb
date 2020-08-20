@@ -1,3 +1,8 @@
+<% if @review.movie %>
+    <h1>Review for <%= @review.movie.title %></h1>
+<% else %>
+    <h1>New Review!</h1>
+<% end %>
 
 <%= form_for([review.movie, review]) do |f| %>
     <%= f.label :movie, "Select the movie you wish to review:" %>
