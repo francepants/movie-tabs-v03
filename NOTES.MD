@@ -63,7 +63,7 @@
     - can sign up - DONE
     - can log in - DONE
     - can log out - DONE
-    
+
     - log in through google 
 
 ## Other
@@ -73,3 +73,4 @@
 
 <%= link_to "Sign Up", signup_path, method: :get%> |
 <%= link_to "Log In", login_path, method: :get%>
+<%= link_to "Log Out", logout_path, method: "delete" %>
