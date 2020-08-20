@@ -65,6 +65,8 @@
 
     - log in through google 
 
+- Add validations
+
 ## Other
 - Genres
     Action, Horror, Comedy, Sci-Fi, Romance, Western, Crime, Rom-Com, Thriller, Adventure, Musical, Drama, Documentary, Mystery, Noir, Martial Arts, Slasher, Fantasy, Dark Comedy, Children's, Biographical, Fiction, Parody, Indie, Superhero, Gangster, Chick Flick, Teen
