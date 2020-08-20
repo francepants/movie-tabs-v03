@@ -2,6 +2,14 @@ class MoviesController < ApplicationController
     before_action :redirect_if_not_logged_in
     before_action :set_movie, except: [:index, :new, :create]
 
+    def index
+        if params[:user_id] && @user = User.find_by_id(params[:user_id])
+            @movies = @user.movies
+        else
+            @movies = Movie.all
+        end
+    end
+
     def new
         @movie = Movie.new
     end
