@@ -12,3 +12,8 @@
 
 <p><%= link_to 'Edit Movie', edit_movie_path(@movie) %></p>
 <p><%= link_to 'Delete Movie', movie_path(@movie), method: "delete" %></p>
+
+<hr>
+
+<p><%= link_to 'See reviews for this movie', movie_reviews_path(@movie) %></p>
+<p><%= link_to 'Add review for this movie', new_movie_review_path(@movie) %></p>

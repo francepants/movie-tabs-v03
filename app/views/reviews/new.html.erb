@@ -20,29 +20,4 @@
 
 <!---form partial--->
 
-<%= form_for([@review.movie, @review]) do |f| %>
-    <%= f.label :movie, "Select the movie you wish to review:" %>
-    <br>
-    <%= f.collection_select :movie_id, Movie.order('title ASC').all, :id, :title, :include_blank => "Movie" %>
-    <br>
-    <br>
-
-    <%= f.label :title, "Review Title:" %>
-    <br>
-    <%= f.text_field :title %>
-    <br>
-    <br>
-
-    <%= f.label :comment %>
-    <br>
-    <%= f.text_area :comment, :cols => 30, :rows => 10 %>
-    <br>
-    <br>
-
-    <%= f.label :recommend %>
-    <%= f.select :recommend, options_for_select(["Yes", "No"]) %>
-    <br>
-    <br>
-
-    <%= f.submit %>
-<% end %>
+<%= render partial: 'form', locals: {review: @review} %>
