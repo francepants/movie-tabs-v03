@@ -43,27 +43,27 @@
 
 ## Check list
 - Movie
-    - can add / create a movie - DONE
-    - can see a list of all movies added - DONE
-    - show individual movie info - DONE
-    - search through movie titles - DONE
+    - can add / create a movie 
+    - can see a list of all movies added 
+    - show individual movie info 
+    - search through movie titles 
 
-    - edit / update movie - update button
-    - delete current_users movie - NEED TO DO
+    - edit / update movie 
+    - delete current_users movie 
     
 
 - Review
-    - can add / create reviews - DONE
-    - can see a list of movie reviews - DONE
-    - can see a list of selected movies reviews - DONE
-    - edit/update only current_users reviews - DONE
-    - can delete current_users reviews - Done
+    - can add / create reviews 
+    - can see a list of movie reviews 
+    - can see a list of selected movies reviews
+    - edit/update only current_users reviews
+    - can delete current_users reviews
 
 - User
     - can sign up - DONE
-    - can log in - DONE
-    - can log out - DONE
-    - log in through google - NEED TO DO
+    - can log in 
+    - can log out 
+    - log in through google 
 
 
 - Genres
