@@ -3,4 +3,7 @@ class User < ApplicationRecord
     has_many :movies, through: :reviews
 
     has_secure_password #authenticate, validates password
+
+    validates :username, presence: true
+    validates :email, presence: true, uniqueness: true
 end

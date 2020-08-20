@@ -1,4 +1,8 @@
-<h1>All Reviews</h1>
+<% if @movie %>
+  <h1>Reviews for <%= @movie.title%></h1>
+<% else %>
+  <h1>All reviews:</h1>
+<% end %>
 
 <% @reviews.each do |rev| %>
     <ul>

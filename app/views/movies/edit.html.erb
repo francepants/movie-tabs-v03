@@ -1,5 +1,6 @@
 <h1>Edit <%= @movie.title %></h1>
 
-<!--- form partial --->
+
+<%= render partial: "layouts/errors", locals: {object: @movie} %>
 
 <%= render partial: 'form', locals: {movie: @movie} %>

@@ -55,8 +55,8 @@
     - can see a list of movie reviews - DONE
     - edit/update only current_users reviews - DONE
     - can delete current_users reviews - DONE
-
     - can see a list of selected movies reviews - Done
+
 
 - User
     - can sign up - DONE
