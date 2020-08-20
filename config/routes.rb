@@ -19,5 +19,8 @@ Rails.application.routes.draw do
   resources :users do
     resources :reviews, only: [:new, :create, :index]
   end
+
+  get '/auth/:google_oath2/callback' => 'sessions#omniauth'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
