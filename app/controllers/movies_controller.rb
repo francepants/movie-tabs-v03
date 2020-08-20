@@ -23,6 +23,18 @@ class MoviesController < ApplicationController
         end
     end
 
+    def edit
+
+    end
+
+    def update
+        if @movie.update(movie_params)
+            redirect_to movie_path
+        else
+            render :edit
+        end
+    end
+
     private
     def set_movie
         @movie = Movie.find_by_id(params[:id])

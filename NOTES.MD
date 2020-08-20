@@ -45,7 +45,7 @@
 - Movie
     - can add / create a movie - DONE
     - can see a list of all movies added - DONE
-    - show individual movie info 
+    - show individual movie info - DONE
     - search through movie titles 
 
     - edit / update movie 

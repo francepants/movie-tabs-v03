@@ -7,3 +7,7 @@
     <li>Rating: <%= @movie.rating %></li>
     <li>Release Year: <%= @movie.release_year %></li>
 </ul>
+
+<hr>
+
+<p><%= link_to 'Edit Movie', edit_movie_path(@movie) %></p>
