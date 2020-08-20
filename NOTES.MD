@@ -53,9 +53,10 @@
 - Review
     - can add / create reviews - DONE
     - can see a list of movie reviews - DONE
-    - can see a list of selected movies reviews
-    - edit/update only current_users reviews
-    - can delete current_users reviews
+    - edit/update only current_users reviews -
+    
+    - can see a list of selected movies reviews -
+    - can delete current_users reviews -
 
 - User
     - can sign up - DONE
