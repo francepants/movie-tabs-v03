@@ -1,30 +1,31 @@
-<%= form_for movie do |f| %>
 
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-    <br>
-    <br>
 
-    <%= f.label :length %>
-    <%= f.number_field :length %>
-    <br>
-    <br>
+    <%= form_for movie, :html => {:class => "form-horizontal center"} do |f| %>
+        <div class="form-group">
+            <%= f.label :title %>
+            <%= f.text_field :title %>
+        </div>
 
-    <%= f.label :genre %>
-    <%= f.text_field :genre %>
-    <br>
-    <br>
+        <div class="form-group">
+            <%= f.label :length%>
+            <%= f.number_field :length%>
+        </div>
 
-    <%= f.label :rating, "Rated" %>
-    <%= f.text_field :rating %>
-    <br>
-    <br>
+        <div class="form-group">
+          <%= f.label :genre%>
+          <%= f.text_field :genre%>
+        </div>
 
-    <%= f.label :release_year %>
-    <%= f.number_field :release_year %>
-    <br>
-    <br>
+        <div class="form-group">
+            <%= f.label :rating, "Rated"%>
+            <%= f.text_field :rating%>
+        </div>
 
-    <%= f.submit %>
+        <div class="form-group">
+           <%= f.label :release_year%>
+           <%= f.number_field :release_year%>
+        </div>
 
-<% end %>
+        <%= f.submit "Submit", class: "btn btn-dark" %>            
+    <% end %>
+

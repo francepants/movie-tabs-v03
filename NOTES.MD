@@ -78,3 +78,25 @@
 <%= link_to "Sign Up", signup_path, method: :get%> |
 <%= link_to "Log In", login_path, method: :get%>
 <%= link_to "Log Out", logout_path, method: "delete" %>
+
+
+## nav bar
+
+<nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">MovieTabs</a>
+      <div class="btn-group" role="group">
+          <% if logged_in? %>
+                <%= link_to "My Profile", user_path(current_user), :class => "btn btn-secondary link_text"%>
+                <%= link_to "All Movies", movies_path, :class => "btn btn-secondary"%>
+                <%= link_to "Add Movie", new_movie_path, :class => "btn btn-secondary"%>
+                <%= link_to "All Reviews", reviews_path, :class => "btn btn-secondary"%>
+                <%= link_to "Add Review", new_review_path, :class => "btn btn-secondary"%>
+                <%= link_to "Log Out", logout_path, method: "delete", :class => "btn btn-secondary"%> 
+          <% else %>
+            <%# <%= link_to "Home", root_path, :class => "link_text" %> 
+            <%= link_to "Sign Up", signup_path, :class => "link_text" %> |
+            <%= link_to "Log In", login_path, :class => "link_text" %> | 
+            <%= link_to "Log In with Google", '/auth/google_oauth2', :class => "link_text" %>
+          <% end %>
+      </div>   
+</nav>

@@ -1,0 +1,37 @@
+
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap/scss/bootstrap";
+
+// Required
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+// Optional
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/code";
+@import "../node_modules/bootstrap/scss/grid";
+
+
+a.link_text{
+  color: #f8f8ff;
+  &:hover {
+     color: #fbd46d;
+   }
+ }
+
+ body {
+  background: eeeeee;
+}
+
+.custom {
+  width: 100px !important;
+}
+
+.container-wide{
+  max-width: 1980px;
+  min-width: 1024px;
+  margin: 0px 30px 0px 30px;
+}
