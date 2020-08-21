@@ -1,6 +1,4 @@
-
-
-    <%= form_for movie, :html => {:class => "form-horizontal center"} do |f| %>
+<%= form_for movie, :html => {:class => "form-horizontal center"} do |f| %>
         <div class="form-group">
             <%= f.label :title %>
             <%= f.text_field :title %>
@@ -27,5 +25,5 @@
         </div>
 
         <%= f.submit "Submit", class: "btn btn-dark" %>            
-    <% end %>
+<% end %>
 
