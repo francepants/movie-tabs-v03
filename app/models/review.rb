@@ -6,5 +6,8 @@ class Review < ApplicationRecord
   validates :comment, presence: true
   validates :recommend, presence: true
 
-
+  def self.order_by_date
+    @review = Review.order('created_at DESC')
+  end
+  
 end

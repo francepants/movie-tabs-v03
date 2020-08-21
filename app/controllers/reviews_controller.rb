@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
         if params[:movie_id] && @movie = Movie.find_by_id(params[:movie_id])
             @reviews = @movie.reviews
         else
-            @reviews = Review.all
+            @reviews = Review.order_by_date
         end
     end
 
