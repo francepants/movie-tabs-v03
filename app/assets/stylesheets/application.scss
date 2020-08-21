@@ -15,20 +15,9 @@
 @import "../node_modules/bootstrap/scss/grid";
 
 
-a.link_text{
-  color: #f8f8ff;
-  &:hover {
-     color: #fbd46d;
-   }
- }
-
- body {
-  background: eeeeee;
-}
-
-.custom {
-  width: 100px !important;
-}
+// .custom {
+//   width: 100px !important;
+// }
 
 .container-wide{
   max-width: 1980px;

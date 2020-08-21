@@ -100,3 +100,12 @@
           <% end %>
       </div>   
 </nav>
+
+
+#### was in application.html.erb
+    <div>
+      <% if flash[:message] %>
+          <%= flash[:message]%>
+      <% end %>
+      <%= @error%>
+    </div>

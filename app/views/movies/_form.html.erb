@@ -1,29 +1,46 @@
-<%= form_for movie, :html => {:class => "form-horizontal center"} do |f| %>
-        <div class="form-group">
-            <%= f.label :title %>
-            <%= f.text_field :title %>
-        </div>
+<div class = "jumbotron jumbotron-fluid">
+    <div class = "container">
 
-        <div class="form-group">
-            <%= f.label :length, "Length(minutes)"%>
-            <%= f.number_field :length%>
-        </div>
+        <%= form_for movie, :html => {:class => "form-horizontal center"} do |f| %>
+                <div class="form-group">
+                    <%= f.label :title, :class => "control-label col-sm-4" %>
+                    <div class="form-group row">
+                        <%= f.text_field :title, :class => "form-control" %>
+                    </div>
+                </div>
 
-        <div class="form-group">
-          <%= f.label :genre%>
-          <%= f.text_field :genre%>
-        </div>
+                <div class="form-group">
+                    <%= f.label :length, "Length(minutes)", :class => "control-label col-sm-4"%>
+                    <div class="form-group row">
+                        <%= f.number_field :length, :class => "form-control" %>
+                    </div>
+                </div>
 
-        <div class="form-group">
-            <%= f.label :rating, "Rated"%>
-            <%= f.text_field :rating%>
-        </div>
+                <div class="form-group">
+                <%= f.label :genre, :class => "control-label col-sm-4"%>
+                    <div class="form-group row">
+                        <%= f.text_field :genre, :class => "form-control" %>
+                    </div>
+                </div>
 
-        <div class="form-group">
-           <%= f.label :release_year%>
-           <%= f.number_field :release_year%>
-        </div>
+                <div class="form-group">
+                    <%= f.label :rating, "Rated", :class => "control-label col-sm-4"%>
+                    <div class="form-group row">
+                        <%= f.text_field :rating, :class => "form-control" %>
+                    </div>
+                </div>
 
-        <%= f.submit "Submit", class: "btn btn-dark" %>            
-<% end %>
+                <div class="form-group">
+                <%= f.label :release_year, :class => "control-label col-sm-4" %>
+                    <div>
+                        <%= f.number_field :release_year, :class => "form-control" %>
+                    </div>
+                </div>
 
+                <div class = "text-center">
+                    <%= f.submit "Submit", class: "btn btn-lg btn-dark" %>            
+                </div>
+        <% end %>
+
+    </div>
+</div>

@@ -1,32 +1,43 @@
-<% if @review.movie %>
-    <h1>Review for <%= @review.movie.title %></h1>
-<% else %>
-    <h1>New Review!</h1>
-<% end %>
+<div class = "jumbotron jumbotron-fluid">
+    <div class = "container">
+        <div>
+            <% if @review.movie %>
+                <h1>Review for <%= @review.movie.title %></h1>
+            <% else %>
+                <h1>New Review!</h1>
+            <% end %>
+        </div>
+        
+        <hr class="my-4">
+    
+        <%= form_for([review.movie, review], :html => {:class => "form-horizontal center"}) do |f| %>
+            <div class="form-group">
+            <%= f.label :movie, "Select the movie you wish to review:", :class => "control-label col-sm-4" %>
+                <%= f.collection_select :movie_id, Movie.order('title ASC').all, :id, :title, :include_blank => "Movie", :class => "form-control" %>
+            </div>
 
-<%= form_for([review.movie, review]) do |f| %>
-    <%= f.label :movie, "Select the movie you wish to review:" %>
-    <br>
-    <%= f.collection_select :movie_id, Movie.order('title ASC').all, :id, :title, :include_blank => "Movie" %>
-    <br>
-    <br>
+            <div class="form-group">
+                <%= f.label :recommend, "Would you recommend this movie?", :class => "control-label col-sm-4" %>
+                <%= f.select :recommend, options_for_select(["Yes", "No"]), :class => "form-control" %>
+            </div>
+            
+            <div class="form-group">
+                <%= f.label :title, "Review Title:", :class => "control-label col-sm-4" %>
+                <div class="form-group row">
+                    <%= f.text_field :title, :class => "form-control" %>
+                </div>
+            </div>
 
-    <%= f.label :title, "Review Title:" %>
-    <br>
-    <%= f.text_field :title %>
-    <br>
-    <br>
+            <div class="form-group">
+                <%= f.label :comment, "Comment:", :class => "control-label col-sm-4" %>
+                <div class="form-group row">
+                    <%= f.text_area :comment, :cols => 30, :rows => 5, :class => "form-control" %>
+                </div>
+            </div>
 
-    <%= f.label :comment %>
-    <br>
-    <%= f.text_area :comment, :cols => 30, :rows => 10 %>
-    <br>
-    <br>
-
-    <%= f.label :recommend %>
-    <%= f.select :recommend, options_for_select(["Yes", "No"]) %>
-    <br>
-    <br>
-
-    <%= f.submit %>
-<% end %>
+            <div class = "text-center">
+            <%= f.submit "Add Review", class: "btn btn-lg btn-dark" %>
+            </div>
+        <% end %>
+    </div>
+</div>

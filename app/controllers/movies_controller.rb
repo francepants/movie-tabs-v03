@@ -4,10 +4,10 @@ class MoviesController < ApplicationController
     before_action :set_movie, except: [:index, :new, :create]
 
     def index
-        if params[:user_id] && @user = User.find_by_id(params[:user_id])
+        if params[:user_id] && @user = User.find_by_id(params[:user_id]) 
             @movies = @user.movies
         else
-            @movies = Movie.all.sorted_movies
+            @movies = Movie.sorted_movies
         end
         
         if params[:term]

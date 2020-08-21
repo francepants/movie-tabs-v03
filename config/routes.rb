@@ -20,7 +20,8 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create, :index]
   end
 
-  get '/auth/:google_oath2/callback' => 'sessions#omniauth'
+  # get '/auth/:google_oath2/callback' => 'sessions#omniauth'
+  get '/auth/:google_oath2/callback' => 'sessions#google'
 
 
   #redirects if no route exists
