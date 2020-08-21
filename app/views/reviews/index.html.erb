@@ -1,21 +1,25 @@
-<% if @movie %>
-  <h1>Reviews for <%= @movie.title%></h1>
-<% else %>
-  <h1>All reviews:</h1>
-<% end %>
+<div class ="container">
+  <% if @movie %>
+    <h1>Reviews for <%= @movie.title%></h1>
+  <% else %>
+    <h1>All reviews:</h1>
+  <% end %>
 
-<% @reviews.each do |rev| %>
-    <ul>
-      <li><strong>Review on <%= link_to rev.movie.title, movie_path(rev.movie_id) %></strong>: 
-      <ul> 
-        <li>Review title: <%= rev.title %></li>
-        <li><%= rev.comment %> - <em><%= rev.user.username %></em></li> </li>
+  <hr>
+
+  <% @reviews.each do |rev| %>
+      <ul>
+        <li><strong>Review on <%= link_to rev.movie.title, movie_path(rev.movie_id) %></strong>: 
+        <ul> 
+          <li>Review title: <%= rev.title %></li>
+          <li><%= rev.comment %> - <em><%= rev.user.username %></em></li> </li>
+        </ul>
+        <ul> 
+          <% if current_user?(rev.user) %>
+              <%= link_to "Edit", edit_review_path(rev) %> |
+              <%= link_to "Delete", rev, method: :delete, data: { confirm: "Do you want to delete this post ?"}%>
+          <% end %>
+        </ul>
       </ul>
-      <ul> 
-        <% if current_user?(rev.user) %>
-            <%= link_to "Edit", edit_review_path(rev) %> |
-            <%= link_to "Delete", rev, method: :delete, data: { confirm: "Do you want to delete this post ?"}%>
-        <% end %>
-      </ul>
-    </ul>
-<% end %>
+  <% end %>
+</div>
