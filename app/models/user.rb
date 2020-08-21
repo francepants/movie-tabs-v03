@@ -8,11 +8,10 @@ class User < ApplicationRecord
     validates :email, presence: true, uniqueness: true
 
 
-    # def self.find_or_create_from_omniauth(user_info)
-    #     binding.pry
-    #     User.first_or_create(uid: user_info[:uid]) do |user|
-    #         user.email = user_info["info"]["email"]
-    #         user.password = SecureRandom.hex
-    #     end
-    # end
+    def self.find_or_create_from_omniauth(user_info)
+        User.first_or_create(uid: user_info[:uid]) do |user|
+            user.email = user_info["info"]["nickname"]
+            user.password = SecureRandom.hex
+        end
+    end
 end
