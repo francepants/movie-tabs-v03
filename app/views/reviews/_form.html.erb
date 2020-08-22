@@ -7,33 +7,33 @@
 
 
 <div class = "jumbotron jumbotron-fluid">
-    <div class = "container">
+    <div>
         <%= form_for([review.movie, review], :html => {:class => "form-horizontal center"}) do |f| %>
-            <div class="form-group">
-            <%= f.label :movie, "Select the movie you wish to review:", :class => "control-label col-sm-4" %>
+            <div class="container form-group">
+            <%= f.label :movie, "Select the movie you wish to review:", :class => "control-label" %>
                 <%= f.collection_select :movie_id, Movie.order('title ASC').all, :id, :title, :include_blank => "Select a Movie", :class => "form-control" %>
             </div>
 
-            <div class="form-group">
-                <%= f.label :recommend, "Would you recommend this movie?", :class => "control-label col-sm-4" %>
+            <div class="container form-group">
+                <%= f.label :recommend, "Would you recommend this movie?", :class => "control-label" %>
                 <%= f.select :recommend, [ 'Yes', 'No' ], :prompt => 'Select One', :class => "form-control" %>
             </div>
             
-            <div class="form-group">
-                <%= f.label :title, "Review Title:", :class => "control-label col-sm-4" %>
+            <div class="container form-group">
+                <%= f.label :title, "Review Title:", :class => "control-label" %>
                 <div>
                     <%= f.text_field :title, :class => "form-control" %>
                 </div>
             </div>
 
-            <div class="form-group">
-                <%= f.label :comment, "Comment:", :class => "control-label col-sm-4" %>
+            <div class="container form-group">
+                <%= f.label :comment, "Comment:", :class => "control-label" %>
                 <div>
                     <%= f.text_area :comment, :cols => 30, :rows => 5, :class => "form-control" %>
                 </div>
             </div>
 
-            <div class = "text-center">
+            <div class = "container text-center">
             <%= f.submit class: "btn btn-lg btn-dark btn-block" %>
             </div>
         <% end %>
