@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2020_08_21_140951) do
     t.text "about_me"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "uid"
+    t.string "uid"
   end
 
   add_foreign_key "reviews", "movies"

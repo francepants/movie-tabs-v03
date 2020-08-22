@@ -11,15 +11,15 @@ Rails.application.routes.draw do
 
   #nested routes
   resources :reviews
-
+  
   resources :movies do
     resources :reviews
   end
-
+  
   resources :users do
     resources :reviews, only: [:new, :create, :index]
   end
-
+  
   # get '/auth/:google_oath2/callback' => 'sessions#omniauth'
   get '/auth/:google_oath2/callback' => 'sessions#google'
 

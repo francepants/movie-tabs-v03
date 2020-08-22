@@ -16,7 +16,8 @@
 
     <% @movies.each do |m| %>
             <div>
-                <li><%= link_to m.title, movie_path(m) %> - <%= m.release_year %></li>
+                <%= link_to m.title, movie_path(m) %> - <%= m.release_year %>
+                
             </div>
     <% end %>
 

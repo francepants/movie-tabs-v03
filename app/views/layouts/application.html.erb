@@ -22,9 +22,12 @@
           <%= flash[:message]%>
       <% end %>
       <%= @error%>
+      
     </div>
 
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
 
   <%#= render partial: "shared/footer" %>
 

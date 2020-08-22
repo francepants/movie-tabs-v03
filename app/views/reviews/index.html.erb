@@ -9,11 +9,11 @@
 
   <% @reviews.each do |rev| %>
       <ul>
-        <li><strong>Review on <%= link_to rev.movie.title, movie_path(rev.movie_id) %></strong>: 
+        <li><strong>Review on <%= link_to rev.movie.title, movie_path(rev.movie_id) %> </strong>: 
+        <p>Posted: <%= rev.created_at.strftime('%B %d, %Y') %> </p> 
         <ul> 
           <li>Review title: <%= rev.title %></li>
           <li><%= rev.comment %> - <em><%= rev.user.username %></em></li> </li>
-          <li>Posted: <%= rev.created_at.strftime('%B %d, %Y') %> </li>
         </ul>
         <ul> 
           <% if current_user?(rev.user) %>

@@ -9,8 +9,10 @@ class User < ApplicationRecord
 
 
     def self.find_or_create_from_omniauth(user_info)
-        User.first_or_create(uid: user_info[:uid]) do |user|
-            user.email = user_info["info"]["nickname"]
+        # binding.pry
+        User.find_or_create_by(uid: user_info[:uid]) do |user|
+            user.email = user_info["info"]["email"]
+            user.username = user_info["info"]["name"]
             user.password = SecureRandom.hex
         end
     end
