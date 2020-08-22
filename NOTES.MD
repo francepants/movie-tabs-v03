@@ -109,3 +109,17 @@
       <% end %>
       <%= @error%>
     </div>
+
+#### movie controller def index for search
+
+        # if params[:user_id] && @user = User.find_by_id(params[:user_id]) 
+        #     @movies = @user.movies
+        # else
+        #     @movies = Movie.search(params[:term])
+        # end
+        
+        if params[:term]
+            @movies = Movie.search(params[:term])
+        else
+            @movies = Movie.sorted_movies
+        end

@@ -4,8 +4,9 @@ class User < ApplicationRecord
 
     has_secure_password #authenticate, validates password
 
-    validates :username, presence: true
+    validates :username, presence: true, uniqueness: true
     validates :email, presence: true, uniqueness: true
+
 
 
     def self.find_or_create_from_omniauth(user_info)

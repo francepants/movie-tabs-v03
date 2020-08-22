@@ -13,4 +13,7 @@ class Movie < ApplicationRecord
     scope :sorted_movies, -> {order("lower(title) ASC")}
     scope :search, -> (term) {self.sorted_movies.where("title LIKE ?", "%#{term}%")}
 
+
+    
+
 end
