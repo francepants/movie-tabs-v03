@@ -9,7 +9,7 @@ To get google authentication to work:
   - GOOGLE_CLIENT_ID=Your client id
   - GOOGLE_CLIENT_SECRET=Your client secret
 - go to Go to 'https://console.developers.google.com'
-- get client id and clent secret add these to .env file
+- get client id and clent secret add these to .env file in place of "Your client id" and "Your client secret"
 
 Then
 - add the .env to the gitignore
