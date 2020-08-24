@@ -1,24 +1,20 @@
 # README
+Welcome to movie tabs!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Franceline's Flatiron Schools Mod 3 project built with Ruby on Rails!
 
-Things you may want to cover:
+To get google authentication to work:
+- add a .env file to project
+- add this to the .env: 
+  GOOGLE_CLIENT_ID=Your client id
+  GOOGLE_CLIENT_SECRET=Your client secret
+- go to Go to 'https://console.developers.google.com'
+- get client id and clent secret add these to .env file
 
-* Ruby version
+Then
+- add the .env to the gitignore
+- bundle install
+- rails db:migrate
+- rails s
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- navigate to localhost:3000 
