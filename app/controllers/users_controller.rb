@@ -7,7 +7,6 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
-            #log them in
             session[:user_id] = @user.id
             redirect_to @user
         else

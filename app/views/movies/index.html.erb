@@ -17,8 +17,8 @@
     <% @movies.each do |m| %>
             <div>
                 <%= link_to m.title, movie_path(m) %> - <%= m.release_year %>
-                
             </div>
+            <br>
     <% end %>
 
 </div>

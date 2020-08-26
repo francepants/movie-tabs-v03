@@ -4,7 +4,6 @@ class ReviewsController < ApplicationController
     before_action :set_review, except: [:index, :new, :create]
 
     def index
-        # if its nested AND if we can find that post 
         if params[:movie_id] && @movie = Movie.find_by_id(params[:movie_id])
             @reviews = @movie.reviews
         else

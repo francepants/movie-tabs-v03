@@ -6,7 +6,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto align-items-center">
         <% if logged_in? %>
-            <%= link_to "My Profile", user_path(current_user), :class => "nav-item nav-link"%>
+            <%= link_to "My Reviews", user_path(current_user), :class => "nav-item nav-link"%>
             <%= link_to "All Movies", movies_path, :class => "nav-item nav-link"%>
             <%= link_to "Add Movie", new_movie_path, :class => "nav-item nav-link"%>
             <%= link_to "All Reviews", reviews_path, :class => "nav-item nav-link"%>

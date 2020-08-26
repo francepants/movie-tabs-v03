@@ -1,10 +1,9 @@
 class ApplicationController < ActionController::Base
 
-    helper_method :current_user, :logged_in?, :current_user? #helper gives access to methods in the views
+    helper_method :current_user, :logged_in?, :current_user?
 
     private
     def current_user
-        # if @current user is already defined then it will = @current user or it will find by id in users table
         @current_user ||= User.find_by_id(session[:user_id]) if session[:user_id]
     end
 
